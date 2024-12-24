@@ -233,7 +233,7 @@ export const QUESTIONS = [
 		id: 9,
 		question: 'What is the name of the Vice President of the United States now?',
 		answers: [
-			'Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States.'
+			'James David Vance'
 		]
 	},
 	{
