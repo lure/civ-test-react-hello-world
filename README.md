@@ -18,10 +18,26 @@ $ npm install
 
 $ npm run dev
 ```
+----
+## Simple regex to parse the quiz pdf into a map
+
+Apply them one by one, fix new lines if needed
+```
+^(\d)+\.\s(.+)$
+{\n\tid: $1,\n\tquestion: '$2',\n\tanswers: [
+
+
+•\s+(.+)$
+\t\t'$1',
+
+,\n{
+\n\t]\n},\n{
+```
+
 
 ----
 
-# React + Vite
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
