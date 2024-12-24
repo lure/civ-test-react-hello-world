@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
-import { QUESTIONS } from './questions.jsx';
+import { QUESTIONS as QUESTIONS2020 } from './questions.jsx';
+import { QUESTIONS as QUESTIONS2008 } from './questions-100.jsx';
+
+
+const QuestionRevision = Object.freeze({
+  // current question list  
+  //R2008: Symbol("2008"),
+  R2008: [...QUESTIONS2008],
+  // obsolete, but possiible to choose if failed the first test
+  //R2020: Symbol("2020"),
+  R2020: [...QUESTIONS2020]
+})
+
 /**
  * Main application component.
  */
@@ -14,6 +26,7 @@ function App() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState([]);
+  const [questionRevision, setQuestionRevision] = useState(QuestionRevision.R2008)
 
   // Keep track of attempts for display on the Main screen
   // Each attempt is an object: { questionCount, correctCount, wrongQuestions[] }
@@ -23,14 +36,14 @@ function App() {
    * Shuffle the QUESTIONS array and start the quiz.
    */
   const startQuiz = () => {
-    // Simple shuffle (Fisher-Yates or naive approach)
-    const shuffled = [...QUESTIONS].sort(() => Math.random() - 0.5);
+    // Simple shuffle (Fisher-Yates or naive approach)            
+    const shuffled = questionRevision.sort(() => Math.random() - 0.5);
     setQuestionList(shuffled);
     setCurrentQuestionIndex(0);
     setScore(0);
     setWrongAnswers([]);
     setShowAnswer(false);
-    setScreen('quiz');
+    setScreen('quiz');    
   };
 
   /**

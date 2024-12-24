@@ -23,7 +23,7 @@ $ npm run dev
 
 Apply them one by one, fix new lines if needed
 ```
-^(\d)+\.\s(.+)$
+^(\d)+\.\s+(.+)$
 {\n\tid: $1,\n\tquestion: '$2',\n\tanswers: [
 
 
