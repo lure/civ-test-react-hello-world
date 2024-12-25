@@ -23,13 +23,20 @@ $ npm run dev
 
 Apply them one by one, fix new lines if needed
 ```
+#headers
 ^(\d)+\.\s+(.+)$
+
 {\n\tid: $1,\n\tquestion: '$2',\n\tanswers: [
 
+#questions
+# 128-q test
+•\s+(.+)$ 
+# 100-q test
+^\s+▪\s+(.+)$
 
-•\s+(.+)$
 \t\t'$1',
 
+# closing
 ,\n{
 \n\t]\n},\n{
 ```
